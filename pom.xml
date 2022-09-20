@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.DoctorApplication</groupId>
 	<artifactId>HospitalManagement</artifactId>
-	<version>0.0.1SNAPSHOT</version>
+	<version>0.0.1-SNAPSHOT</version>
 	<name>HospitalManagement</name>
 	<description>Java-Springboot based REST Api  project on Hospital Management</description>
 	<properties>
@@ -46,11 +46,12 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-		<dependency>
+	<dependency>
 	<groupId>com.microsoft.sqlserver</groupId>
 	<artifactId>mssql-jdbc</artifactId>
 	<scope>runtime</scope>
 </dependency>
+
 	</dependencies>
 
 	<build>
