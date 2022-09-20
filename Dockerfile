@@ -1,4 +1,4 @@
 FROM maven:latest
-COPY . .
-COPY /target/HospitalManagement-0.0.1SNAPSHOT.jar docterdetails.jar
-CMD java -jar doctordetails.jar
+EXPOSE 8082
+ADD target/HospitalManagement-0.0.1SNAPSHOT.jar doctordetails.jar
+ENTRYPOINT ["java","-jar","/doctordetails.jar]
