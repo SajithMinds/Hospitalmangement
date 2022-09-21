@@ -34,20 +34,23 @@ public class DoctorServiceImpl implements DoctorService {
 			return doctorsdetails;
 		}
 
-		public DoctorData getDetailsById(DoctorData details, int id) {
+		public DoctorData getDetailsById(int id) {
 			// TODO Auto-generated method stub
 			return repos.findById(id).orElseThrow(() -> new ResourceNotFoundException("Id doesn't exist in the database" + id));
 		}
 		
-		public DoctorData UpdateDoctorDetails(DoctorData details,double salary) {
+		public DoctorData UpdateDoctorDetails(int id,double salary) throws ResourceNotFoundException {
 			// TODO Auto-generated method stub
-			
-				DoctorData doctorsdetails=this.repos.findBysalary(salary);
-			    doctorsdetails.setSalary(details.getSalary());
-
-				repos.save(doctorsdetails);
+		
+				DoctorData doctorsdetails=this.repos.findById(id).orElseThrow(() -> new ResourceNotFoundException("Id doesn't exist in the database" + id));
+				
+			    doctorsdetails.setSalary(salary);
+			    repos.save(doctorsdetails);
+			    
 				return doctorsdetails;
-			 }
+				
+		
+		}
 		
 		public void deleteDoctorDetails(int id) {
 			repos.deleteById(id);

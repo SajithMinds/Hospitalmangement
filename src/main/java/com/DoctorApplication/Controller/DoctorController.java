@@ -34,13 +34,13 @@ public class DoctorController {
 	}
 
 	@GetMapping("/details/{id}")
-	public DoctorData getDetailsById(@RequestBody DoctorData details,@PathVariable int id) {
-		return service.getDetailsById(details,id);
+	public DoctorData getDetailsById(@PathVariable int id) {
+		return service.getDetailsById(id);
 	}
 	
-	@PutMapping("/updetails/{salary}")
-	public DoctorData UpdateDoctorDetails(@RequestBody DoctorData details,@PathVariable double salary) {
-	return service.UpdateDoctorDetails(details, salary);
+	@PutMapping("/{id}/{salary}")
+	public DoctorData UpdateDoctorDetails(@PathVariable int id,@PathVariable double salary) {
+	return service.UpdateDoctorDetails(id, salary);
 	}
 
 	@DeleteMapping("/del/{id}")
